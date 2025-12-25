@@ -72,7 +72,7 @@ const ClimateTimeMachine = () => {
             </div>
 
             {/* Image viewport */}
-            <div className="relative h-[350px] md:h-[450px] overflow-hidden bg-background">
+            <div className="relative h-[280px] md:h-[350px] overflow-hidden bg-background">
               {timelineData.map((data, index) => (
                 <img
                   key={data.year}
@@ -117,7 +117,7 @@ const ClimateTimeMachine = () => {
             </div>
 
             {/* Status label */}
-            <div className="absolute bottom-20 left-4 z-10">
+            <div className="absolute bottom-4 left-4 z-10">
               <div className="bg-card/90 backdrop-blur-md border border-border rounded-lg px-3 py-2">
                 <p className="text-[10px] font-mono text-muted-foreground">STATUS</p>
                 <p className={`text-sm font-display font-semibold ${getTimelineColor(sliderValue)}`}>
@@ -127,55 +127,60 @@ const ClimateTimeMachine = () => {
             </div>
 
             {/* Location badge */}
-            <div className="absolute bottom-20 right-4 z-10">
+            <div className="absolute bottom-4 right-4 z-10">
               <div className="bg-card/90 backdrop-blur-md border border-border rounded-lg px-3 py-2">
                 <p className="text-xs font-mono text-muted-foreground">Aral Sea</p>
                 <p className="text-[10px] text-muted-foreground/70">Central Asia</p>
               </div>
             </div>
+          </div>
 
-            {/* Timeline slider */}
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-card via-card/95 to-transparent pt-8 pb-4 px-6">
-              {/* Timeline ticks */}
-              <div className="relative h-8 mb-2">
-                {timelineData.map((data, index) => (
-                  <div
-                    key={data.year}
-                    className="absolute top-0 flex flex-col items-center"
-                    style={{ left: `${index * 25}%`, transform: 'translateX(-50%)' }}
-                  >
-                    <div className={`w-px h-3 transition-colors duration-300 ${
-                      index <= currentIndex ? getTimelineColor(sliderValue).replace('text-', 'bg-') : 'bg-muted-foreground/30'
-                    }`} />
-                    <span className={`text-xs font-mono mt-1 transition-colors duration-300 ${
-                      index === currentIndex ? getTimelineColor(sliderValue) : 'text-muted-foreground/50'
-                    }`}>
-                      {data.year}
-                    </span>
-                  </div>
-                ))}
-              </div>
-
-              {/* Slider */}
-              <input
-                type="range"
-                min="0"
-                max="100"
-                value={sliderValue}
-                onChange={(e) => setSliderValue(Number(e.target.value))}
-                className="w-full h-2 bg-muted rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-primary [&::-webkit-slider-thumb]:shadow-[0_0_15px_hsl(var(--primary)/0.5)] [&::-webkit-slider-thumb]:cursor-grab [&::-webkit-slider-thumb]:active:cursor-grabbing [&::-webkit-slider-thumb]:transition-transform [&::-webkit-slider-thumb]:hover:scale-110"
-              />
-
-              {/* Progress bar */}
-              <div className="relative h-1 mt-2 bg-muted/50 rounded-full overflow-hidden">
-                <div 
-                  className={`absolute left-0 top-0 bottom-0 rounded-full transition-all duration-300 ${
-                    sliderValue < 25 ? 'bg-blue-500' : sliderValue < 50 ? 'bg-cyan-500' : sliderValue < 75 ? 'bg-amber-500' : 'bg-orange-500'
-                  }`}
-                  style={{ width: `${sliderValue}%` }}
-                />
-              </div>
+          {/* Timeline slider - OUTSIDE the image container */}
+          <div className="bg-card border-t border-border px-6 py-5">
+            {/* Timeline ticks */}
+            <div className="relative h-8 mb-3">
+              {timelineData.map((data, index) => (
+                <div
+                  key={data.year}
+                  className="absolute top-0 flex flex-col items-center"
+                  style={{ left: `${index * 25}%`, transform: 'translateX(-50%)' }}
+                >
+                  <div className={`w-px h-4 transition-colors duration-300 ${
+                    index <= currentIndex ? getTimelineColor(sliderValue).replace('text-', 'bg-') : 'bg-muted-foreground/30'
+                  }`} />
+                  <span className={`text-sm font-mono mt-1 transition-colors duration-300 ${
+                    index === currentIndex ? getTimelineColor(sliderValue) + ' font-bold' : 'text-muted-foreground/50'
+                  }`}>
+                    {data.year}
+                  </span>
+                </div>
+              ))}
             </div>
+
+            {/* Slider */}
+            <input
+              type="range"
+              min="0"
+              max="100"
+              value={sliderValue}
+              onChange={(e) => setSliderValue(Number(e.target.value))}
+              className="w-full h-3 bg-muted rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-primary [&::-webkit-slider-thumb]:shadow-[0_0_20px_hsl(var(--primary)/0.6)] [&::-webkit-slider-thumb]:cursor-grab [&::-webkit-slider-thumb]:active:cursor-grabbing [&::-webkit-slider-thumb]:transition-transform [&::-webkit-slider-thumb]:hover:scale-125 [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-foreground/20"
+            />
+
+            {/* Progress bar */}
+            <div className="relative h-2 mt-3 bg-muted/50 rounded-full overflow-hidden">
+              <div 
+                className={`absolute left-0 top-0 bottom-0 rounded-full transition-all duration-300 ${
+                  sliderValue < 25 ? 'bg-blue-500' : sliderValue < 50 ? 'bg-cyan-500' : sliderValue < 75 ? 'bg-amber-500' : 'bg-orange-500'
+                }`}
+                style={{ width: `${sliderValue}%` }}
+              />
+            </div>
+
+            {/* Drag instruction */}
+            <p className="text-xs text-muted-foreground text-center mt-3">
+              ← Drag the slider to travel through time →
+            </p>
           </div>
         </div>
 
