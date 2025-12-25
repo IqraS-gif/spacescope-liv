@@ -138,4 +138,55 @@
       transparent 100%
     );
   }
+
+  @keyframes dash-down {
+    0% { stroke-dashoffset: 40; opacity: 0; }
+    20% { opacity: 1; }
+    100% { stroke-dashoffset: 0; opacity: 1; }
+  }
+
+  @keyframes dash-bounce {
+    0% { stroke-dashoffset: 30; opacity: 0; }
+    50% { opacity: 0; }
+    100% { stroke-dashoffset: 0; opacity: 0.6; }
+  }
+
+  @keyframes wave-down {
+    0% { stroke-dashoffset: 200; opacity: 0; }
+    10% { opacity: 1; }
+    100% { stroke-dashoffset: 0; opacity: 1; }
+  }
+
+  @keyframes wave-up {
+    0% { stroke-dashoffset: 0; opacity: 0; }
+    60% { opacity: 0; }
+    100% { stroke-dashoffset: 200; opacity: 0.5; }
+  }
+
+  .animate-dash-down {
+    animation: dash-down 1s ease-out forwards;
+  }
+
+  .animate-dash-bounce {
+    animation: dash-bounce 1.2s ease-out forwards;
+  }
+
+  .animate-wave-down {
+    stroke-dasharray: 200;
+    animation: wave-down 1.5s ease-out forwards;
+  }
+
+  .animate-wave-up {
+    stroke-dasharray: 200;
+    animation: wave-up 2s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.3s ease-out forwards;
+  }
+
+  @keyframes scale-in {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
 }
