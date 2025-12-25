@@ -43,12 +43,12 @@ const WhyItMattersCards = ({ radarActive }: WhyItMattersCardsProps) => {
             key={card.id}
             className={`
               relative overflow-hidden rounded-xl p-5 transition-all duration-500 ease-out
-              bg-card/30 backdrop-blur-md border
+              bg-card/60 backdrop-blur-md border
               ${isHighlighted 
                 ? card.color === "cyan"
-                  ? "border-primary/60 shadow-[0_0_30px_hsl(var(--primary)/0.3)] opacity-100 scale-[1.02]"
-                  : "border-green-500/60 shadow-[0_0_30px_hsl(142_76%_36%/0.3)] opacity-100 scale-[1.02]"
-                : "border-border/50 opacity-50 hover:opacity-70"
+                  ? "border-primary/60 shadow-[0_0_30px_hsl(var(--primary)/0.3)] scale-[1.02]"
+                  : "border-green-500/60 shadow-[0_0_30px_hsl(142_76%_36%/0.3)] scale-[1.02]"
+                : "border-border hover:border-border/80"
               }
             `}
             style={{
@@ -89,7 +89,7 @@ const WhyItMattersCards = ({ radarActive }: WhyItMattersCardsProps) => {
                 }`} />
               </div>
               <h4 className={`font-display font-semibold transition-colors duration-500 ${
-                isHighlighted ? "text-foreground" : "text-foreground/70"
+                isHighlighted ? "text-foreground" : "text-foreground"
               }`}>
                 {card.title}
               </h4>
@@ -97,7 +97,7 @@ const WhyItMattersCards = ({ radarActive }: WhyItMattersCardsProps) => {
 
             {/* Text */}
             <p className={`text-sm leading-relaxed transition-colors duration-500 relative z-10 ${
-              isHighlighted ? "text-muted-foreground" : "text-muted-foreground/60"
+              isHighlighted ? "text-foreground/90" : "text-muted-foreground"
             }`}>
               {card.text}
             </p>
