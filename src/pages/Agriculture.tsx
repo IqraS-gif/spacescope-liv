@@ -1,5 +1,5 @@
 import CropHealthLens from "@/components/CropHealthLens";
-import { Leaf, Satellite } from "lucide-react";
+import { Leaf, Satellite, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Agriculture = () => {
@@ -26,6 +26,10 @@ const Agriculture = () => {
             <Link to="/agriculture" className="text-sm text-green-400 font-medium flex items-center gap-2">
               <Leaf className="w-4 h-4" />
               Crop Health
+            </Link>
+            <Link to="/climate" className="text-sm text-muted-foreground hover:text-orange-400 transition-colors flex items-center gap-2">
+              <Clock className="w-4 h-4" />
+              Climate History
             </Link>
           </nav>
 

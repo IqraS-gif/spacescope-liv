@@ -1,25 +1,25 @@
-import DisasterReliefSlider from "@/components/DisasterReliefSlider";
-import { Globe, Satellite, Leaf, Clock } from "lucide-react";
+import ClimateTimeMachine from "@/components/ClimateTimeMachine";
+import { Clock, Satellite, Leaf } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const Index = () => {
+const Climate = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="border-b border-border bg-card/50 backdrop-blur-md sticky top-0 z-50">
         <div className="container max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center glow-cyan">
-              <Satellite className="w-5 h-5 text-primary" />
+            <div className="w-10 h-10 rounded-lg bg-orange-500/20 flex items-center justify-center shadow-[0_0_15px_hsl(25_95%_53%/0.3)]">
+              <Clock className="w-5 h-5 text-orange-400" />
             </div>
             <div>
-              <h1 className="font-display font-bold text-lg text-foreground">Earth Impact</h1>
-              <p className="text-xs text-muted-foreground uppercase tracking-wider">Disaster Response Hub</p>
+              <h1 className="font-display font-bold text-lg text-foreground">Climate Archive</h1>
+              <p className="text-xs text-muted-foreground uppercase tracking-wider">Historical Analysis</p>
             </div>
           </div>
           
           <nav className="hidden md:flex items-center gap-6">
-            <Link to="/" className="text-sm text-primary font-medium flex items-center gap-2">
+            <Link to="/" className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-2">
               <Satellite className="w-4 h-4" />
               Disaster Relief
             </Link>
@@ -27,15 +27,15 @@ const Index = () => {
               <Leaf className="w-4 h-4" />
               Crop Health
             </Link>
-            <Link to="/climate" className="text-sm text-muted-foreground hover:text-orange-400 transition-colors flex items-center gap-2">
+            <Link to="/climate" className="text-sm text-orange-400 font-medium flex items-center gap-2">
               <Clock className="w-4 h-4" />
               Climate History
             </Link>
           </nav>
 
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-            <span className="text-xs font-mono text-muted-foreground">SYSTEMS ONLINE</span>
+            <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
+            <span className="text-xs font-mono text-muted-foreground">ARCHIVE ACTIVE</span>
           </div>
         </div>
       </header>
@@ -44,21 +44,21 @@ const Index = () => {
       <section className="relative py-12 md:py-16 overflow-hidden">
         {/* Background effects */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl" />
         </div>
 
         <div className="container max-w-7xl mx-auto px-4 relative z-10">
           {/* Page intro */}
           <div className="flex items-center justify-center gap-2 mb-8">
-            <Globe className="w-5 h-5 text-primary" />
+            <Clock className="w-5 h-5 text-orange-400" />
             <span className="text-sm text-muted-foreground">
-              Satellite Technology for Humanitarian Response
+              52 Years of Earth Observation History
             </span>
           </div>
 
-          {/* Main Slider Component */}
-          <DisasterReliefSlider />
+          {/* Main Component */}
+          <ClimateTimeMachine />
         </div>
       </section>
 
@@ -66,7 +66,7 @@ const Index = () => {
       <footer className="border-t border-border bg-card/30 py-8">
         <div className="container max-w-7xl mx-auto px-4 text-center">
           <p className="text-sm text-muted-foreground">
-            SpaceScope • Satellite-Powered Earth Observation
+            SpaceScope • Climate Change & Historical Analysis Module
           </p>
         </div>
       </footer>
@@ -74,4 +74,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default Climate;
