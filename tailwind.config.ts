@@ -13,6 +13,11 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["JetBrains Mono", "monospace"],
+        display: ["Orbitron", "sans-serif"],
+        mono: ["JetBrains Mono", "monospace"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -47,6 +52,19 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        cyan: {
+          glow: "hsl(var(--cyan-glow))",
+          soft: "hsl(var(--cyan-soft))",
+        },
+        radar: {
+          blue: "hsl(var(--radar-blue))",
+        },
+        alert: {
+          red: "hsl(var(--alert-red))",
+        },
+        flood: {
+          highlight: "hsl(var(--flood-highlight))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -65,25 +83,28 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        "scan-line": {
+          "0%": { opacity: "0.3" },
+          "50%": { opacity: "1" },
+          "100%": { opacity: "0.3" },
+        },
+        "border-pulse": {
+          "0%, 100%": { borderColor: "hsl(188 100% 50% / 0.5)" },
+          "50%": { borderColor: "hsl(188 100% 50% / 0.8)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "scan-line": "scan-line 1.5s ease-in-out infinite",
+        "border-pulse": "border-pulse 2s ease-in-out infinite",
       },
     },
   },
