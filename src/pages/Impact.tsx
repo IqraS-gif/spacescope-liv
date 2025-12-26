@@ -96,14 +96,14 @@ const Impact = () => {
           </div>
           
           <nav className="hidden md:flex items-center gap-4 text-sm">
-            <NavLink to="/" icon="satellite" label="Disaster Relief" />
-            <NavLink to="/agriculture" icon="leaf" label="Crop Health" color="text-green-400" />
-            <NavLink to="/climate" icon="clock" label="Climate" color="text-orange-400" />
-            <NavLink to="/celestial" icon="calendar" label="Events" color="text-amber-400" />
-            <NavLink to="/cosmic-weather" icon="sun" label="Weather" color="text-purple-400" />
-            <NavLink to="/missions" icon="rocket" label="Missions" color="text-blue-400" />
-            <NavLink to="/learn" icon="book" label="Learn" color="text-emerald-400" />
-            <NavLink to="/impact" icon="globe" label="Impact" color="text-rose-400" active />
+            <AppNavLink to="/" icon="satellite" label="Disaster Relief" />
+            <AppNavLink to="/agriculture" icon="leaf" label="Crop Health" color="text-green-400" />
+            <AppNavLink to="/climate" icon="clock" label="Climate" color="text-orange-400" />
+            <AppNavLink to="/celestial" icon="calendar" label="Events" color="text-amber-400" />
+            <AppNavLink to="/cosmic-weather" icon="sun" label="Weather" color="text-purple-400" />
+            <AppNavLink to="/missions" icon="rocket" label="Missions" color="text-blue-400" />
+            <AppNavLink to="/learn" icon="book" label="Learn" color="text-emerald-400" />
+            <AppNavLink to="/impact" icon="globe" label="Impact" color="text-rose-400" active />
           </nav>
 
           <div className="flex items-center gap-2">
