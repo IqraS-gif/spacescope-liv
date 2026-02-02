@@ -10,22 +10,20 @@ const Agriculture = () => {
       {/* Header */}
       <header className="border-b border-border bg-card/50 backdrop-blur-md sticky top-0 z-50">
         <div className="container max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             <a
               href={DASHBOARD_URL}
-              className="flex items-center gap-2 px-3 py-2 rounded-lg bg-muted/50 hover:bg-muted text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="w-10 h-10 rounded-lg bg-muted/50 hover:bg-muted flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
+              title="Back to Dashboard"
             >
-              <ArrowLeft className="w-4 h-4" />
-              <span className="hidden sm:inline">Back to Dashboard</span>
+              <ArrowLeft className="w-5 h-5" />
             </a>
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-green-500/20 flex items-center justify-center shadow-[0_0_15px_hsl(142_76%_36%/0.3)]">
-                <Leaf className="w-5 h-5 text-green-400" />
-              </div>
-              <div>
-                <h1 className="font-display font-bold text-lg text-foreground">Food Security</h1>
-                <p className="text-xs text-muted-foreground uppercase tracking-wider">Agriculture Monitor</p>
-              </div>
+            <div className="w-10 h-10 rounded-lg bg-green-500/20 flex items-center justify-center shadow-[0_0_15px_hsl(142_76%_36%/0.3)]">
+              <Leaf className="w-5 h-5 text-green-400" />
+            </div>
+            <div>
+              <h1 className="font-display font-bold text-lg text-foreground">Food Security</h1>
+              <p className="text-xs text-muted-foreground uppercase tracking-wider">Agriculture Monitor</p>
             </div>
           </div>
           
