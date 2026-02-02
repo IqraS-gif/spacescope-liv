@@ -1,6 +1,8 @@
 import ClimateTimeMachine from "@/components/ClimateTimeMachine";
-import { Clock, Satellite, Leaf } from "lucide-react";
+import { Clock, Satellite, Leaf, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+
+const DASHBOARD_URL = "https://spacescope-live.vercel.app/dashboard";
 
 const Climate = () => {
   return (
@@ -8,18 +10,27 @@ const Climate = () => {
       {/* Header */}
       <header className="border-b border-border bg-card/50 backdrop-blur-md sticky top-0 z-50">
         <div className="container max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-orange-500/20 flex items-center justify-center shadow-[0_0_15px_hsl(25_95%_53%/0.3)]">
-              <Clock className="w-5 h-5 text-orange-400" />
-            </div>
-            <div>
-              <h1 className="font-display font-bold text-lg text-foreground">Climate Archive</h1>
-              <p className="text-xs text-muted-foreground uppercase tracking-wider">Historical Analysis</p>
+          <div className="flex items-center gap-4">
+            <a
+              href={DASHBOARD_URL}
+              className="flex items-center gap-2 px-3 py-2 rounded-lg bg-muted/50 hover:bg-muted text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              <span className="hidden sm:inline">Back to Dashboard</span>
+            </a>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-lg bg-orange-500/20 flex items-center justify-center shadow-[0_0_15px_hsl(25_95%_53%/0.3)]">
+                <Clock className="w-5 h-5 text-orange-400" />
+              </div>
+              <div>
+                <h1 className="font-display font-bold text-lg text-foreground">Climate Archive</h1>
+                <p className="text-xs text-muted-foreground uppercase tracking-wider">Historical Analysis</p>
+              </div>
             </div>
           </div>
           
           <nav className="hidden md:flex items-center gap-6">
-            <Link to="/" className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-2">
+            <Link to="/disaster" className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-2">
               <Satellite className="w-4 h-4" />
               Disaster Relief
             </Link>
